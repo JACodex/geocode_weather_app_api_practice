@@ -3,7 +3,7 @@ require('dotenv').config();
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast')
 
-geocode('Boston', (error, data)=>{
+geocode('Boston', (error, data)=>{ //returns lat long of location argv[0] callback handles api request
     console.log('Error:', error);
     console.log('City Data', data);
 });
@@ -18,7 +18,7 @@ geocode('Boston', (error, data)=>{
 //    - Coordinate error, pass string for error
 //    - Success, pass forecast string for data (same format as from before)
 
-forecast.forecastLat(-75.7088, 44.1545, (error, data) => {
+forecast.forecastLat(-75.7088, 44.1545, (error, data) => { //prints weather at a location given via lat/long argv[0], argv[1]
     console.log('Weather Error', error)
     console.log(`Temperature in ${data.location.name}, ${data.current.temperature}`)
   })
